@@ -20,7 +20,10 @@ class _HomePageState extends State<HomePage> {
         builder: (BuildContext context) {
           if(homeController.pokemons.error != null) {
             return Center(
-              child: Text('Erro'),
+              child: RaisedButton(
+                child: Text('Press again'),
+                onPressed: () => homeController.fetchPokemons(),
+              ),
             );
           }
 
